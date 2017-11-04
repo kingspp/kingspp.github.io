@@ -8,9 +8,9 @@ tags: js automation casperjs
 finished: false
 ---
 
-I have always faced the issue of having bandwidth issues during last week of the month - Similar to month-end salary issues :D. Once you go 10+Mbps, you can never use anything that has `kilo` in it, it always has to be **MEGA**!!. I hate pixels, only when it comes to streaming a video online - big ass televisions are even worse. Sshhh, Enough of whining, lets dive down to the answer -
+I have always faced the bandwidth issues during last week of the month - Similar to month-end salary issues :D. Once you go 10+Mbps, you can never use anything that has `kilo` in it, it always has to be **MEGA**!!. I hate pixels, only when it comes to streaming a video online - big ass televisions are even worse. Sshhh, Enough of whining, lets dive down to the answer -
 
-#### Step 1: Install CasperJS
+#### Step 1: [Install CasperJS](http://docs.casperjs.org/en/latest/installation.html)
 
 #### Step 2: Tiny piece of Code
 ```javascript
@@ -38,7 +38,8 @@ casper.then(function() {
 
 });
 
-// At this stage you are prety much done and might have logged into your router settings - This part needs major refactoring, depending on the type of the router
+// At this stage you are prety much done and might have logged into your router settings - 
+This part needs major refactoring, depending on the type of the router
 casper.then(function(){
   this.open('http://192.168.0.1/ipqostc_gen_ap.htm').then(function() {
 
@@ -53,7 +54,9 @@ casper.then(function(){
 });
 });
 casper.run();
+
+// Save this script as router_hack.js
 ```
 
-#### Step 4: Run - casperjs router_hack.js 128
+#### Step 3: Run - `casperjs router_hack.js 128`
 The above command sets both upload and download limts to 128kbps
