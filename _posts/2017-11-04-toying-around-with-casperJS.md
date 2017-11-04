@@ -3,7 +3,7 @@ layout: post
 title: Toying around with CasperJS :D
 description: "Solution for NBS (neighbour-bandwidth-suc^er) problem"
 author: kingspp
-category: misc
+category: tricks
 tags: js automation casperjs
 finished: false
 ---
