@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-**Hi i'm kuoa!** and here is the place where i document and share my projects.
+**Hi i'm Prathyush!** and here is the place where my thoughts come to life.
 
-* [Github](http://github.com/kuoa)
-* Mail: kuoacat[at]gmail[dot]com
+* [Github](http://github.com/kingspp)
+* Mail: kingspprathyush[at]gmail[dot]com
