@@ -1,7 +1,7 @@
 # Site settings
-title: Julia #website title
+title: Alochane #website title
 description: > # this means to ignore newlines until "baseurl:"
-  Julia
+  Kalpane
 url: https://kingspp.github.io # the base hostname & protocol for your site
 baseurl: # the sub-path of your site, e.g. /blog/
 
