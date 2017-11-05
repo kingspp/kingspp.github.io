@@ -9,13 +9,12 @@ layout: default
          <i class="fa fa-calendar-o"></i> {{ page.date | date: "%b %-d, %Y" }}
          {% if page.author %} • <i class="fa fa-user"></i> {{ page.author }}{% endif %}
          {% if page.meta %} • {{ page.meta }}{% endif %}</p>
+         <p>{% if page.description %}{{ page.description }}{% endif %}</p>
   </header>
 
     {% include prev_next_post.html %}
   
-  <article class="post-content">
-    <p> {% if page.description %} </p>
-  </article>
+
 
   <article class="post-content">
     {{ content }}
