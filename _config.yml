@@ -18,14 +18,28 @@ links:
   - name:         Archive
     url:          /archive
     external:     false
+  - name:         Search
+    url:          /search
     external:     false
   - name:         GitHub
     url:          http://github.com/kingspp
     external:     true
 
+# Search settings
+tipue_search:
+  include:
+    pages: true
+  exclude:
+    files: [index.md, search.html]
+
 # Build settings
 markdown: kramdown
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
+plugins:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
 
 redcarpet:
   extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "fenced_code_blocks"]
