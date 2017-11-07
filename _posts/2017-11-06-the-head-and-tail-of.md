@@ -168,12 +168,12 @@ Output: Expected
 ```
 
 Now we have an idea on the usage of handlers, formatters and filters. Configuring these modules using 
-statements is a tedious process, but we have multiple way of configuring logging module - 
+statements is a tedious process, but we have multiple ways of configuring logging module - 
 * Inline Configuration - `logging.basicConfig(level=..., fmt=...)`
 * Dictionary based Configuration - dictConfig
 * YAML based Configuration - pyYaml
 
-For my usage, the last one i.e YAML based configuration provides interesting way to configure logging module, let start with a basic example
+For my usage, the last one i.e YAML based configuration provides an interesting way to configure logging module, let start with a basic example
 
 ```yaml
 # logging_config.yaml
@@ -332,6 +332,6 @@ setup_logging(default_path=os.path.join("/".join(__file__.split('/')[:-1]), 'con
 ```
 
 
-So whenever our main module is imported, setup_logging method will be called which sets Root Logger and module level
+So, whenever our main module is imported, setup_logging method will be called which sets Root Logger and module level
 logging configurations. Have fun logging!!
 
