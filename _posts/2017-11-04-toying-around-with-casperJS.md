@@ -5,7 +5,7 @@ description: "Solution for NBS (neighbour-bandwidth-suc^er) problem"
 author: kingspp
 category: tricks
 tags: js automation casperjs
-finished: false
+finished: true
 ---
 
 I have always faced the bandwidth issues during last week of the month - Similar to month-end salary issues :D. Once you go 10+Mbps, you can never use anything that has `kilo` in it, it always has to be **MEGA**!!. I hate pixels, only when it comes to streaming a video online - big ass televisions are even worse. Sshhh, Enough of whining, lets dive down to the answer -
@@ -59,4 +59,6 @@ casper.run();
 ```
 
 #### Step 3: Run - `casperjs router_hack.js 128`
-The above command sets both upload and download limts to 128kbps
+The above command sets both upload and download limts to 128kbps. I usually set it to 512Kbps so that the TV wont suck
+much of the data but at the same time youtube videos are playable. It was a fun exercise and while implementing it, learnt 
+stuff regarding headless browser testing and later it was helpful for a project where there was a requirement for web scraping!. See ya..

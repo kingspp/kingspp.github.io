@@ -5,7 +5,7 @@ description: "Singleton - Python's obvious choice for global configuration"
 author: kingspp
 category: Design
 tags: python design-pattern architecture
-finished: false
+finished: true
 ---
 
 **Singleton**, the name says it all - Comprises of a single entity. Often in python this pattern is overlooked.
@@ -21,6 +21,7 @@ an architect, his set of tools, evolve. This evolution brings in the concept of 
 a set of tools and we call it a library.
 
 We will design the library - **Child monitoring suite**
+
 
 ```python
 
