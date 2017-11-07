@@ -20,7 +20,7 @@ Lets say, you want to build a set of tools required for a project. As a develope
 an architect, his set of tools, evolve. This evolution brings in the concept of abstraction. So lets say we have 
 a set of tools and we call it a library.
 
-We will design the library - **Child monitoring suite**
+We will design a library - **Child monitoring suite**
 
 
 ```python
@@ -40,7 +40,7 @@ library_config = {
 ```
 
 Now we have a set of changeable conditions. The first one describes, allowed fruits for consumption, while 
-the second one seems to be a limiting factor for the day. Next is to write a simple loader.
+the second one seems to be a limiting factor for the day. Next is to write a simple loader -
 
 ```python
 
@@ -72,7 +72,7 @@ library_configuration  = LibraryConfiguration('config.json')
     
 ```
 
-Lets start defining the functionalities for our library, we have three modules, namely morning and evening
+Lets start by defining the functionalities for our library, we have two modules, namely morning and evening
 consumptions - 
 
 
@@ -145,7 +145,7 @@ config.ALLOWED_FRUITS = ['apple', 'orange']
 evening_consumption.check_consumption_rate(7) # Output: Good Consumption (Something is missing here)
 ```
 
-Even though we changed consumption limit after doctor's advice, our evening module did not 
+Even though we had changed consumption limit after doctor's advice, our evening consumption module did not 
 warn us about the consumption rate. Ideally we should have got - **Bad Consumption (7>4)** but we 
 got **Good Consumption**.
 
@@ -189,8 +189,8 @@ class Singleton(type):
 ```
 
 Such an intuitive design. As simple as it might seem, its usage benefits greatly. The ideology is simple - 
-*When an instance for a class is created, store the instance and when a developer creates a new instance, return the
-stored instance* Lets head back to our SimpleClass problem. Our goal is to have a single instance.
+*When an instance for a class is created, store the instance and when a developer calls for a new instance, return the
+stored instance*. Lets head back to our SimpleClass problem. Our goal is to have a single instance.
 
 ```python
 
@@ -214,8 +214,8 @@ sample_1.var = 25
 print(sample_2.var) # prints 25
 ```
 
-Aha, we now have a solution to our problem we faced in our library. Our **LibraryConfiguration** class
-should have a metaclass (baseclass) as **Singleton**. This post might feel long for experienced developers,
+Aha, we now have a solution to a problem we faced in our library. Our **LibraryConfiguration** class
+should have metaclass (baseclass) as **Singleton**. This post might feel long for experienced developers,
 but for starters, I feel its apt. For me programming was fun and simple when the explanation had a relation to 
 real world example. It was fun explaining stuff. Signing off till next post.
 
