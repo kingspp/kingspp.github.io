@@ -17,8 +17,9 @@ and ease of training a neural network. Contrib package provides rapid prototypin
 contributors.
 
 **Why is it deprecated**<br>
-
-**What are the after effects and solutions?**<br>
+Since its inception, contrib package has outgrown its size and application usecases and hence from 2.0 contrib package will cease to exist.
+Instead of contrib package, a single package will be split into easily maintainable open source projects. Some of the most used
+api's will be optimized and later integrated with tensorflow.
 
 **Is there any way to analyze / measure the after effects?**<br>
 It got me thinking, since I was using few api's from contrib package, what might be the global trend of this package? 
@@ -253,17 +254,5 @@ Some interesting results,
 | 10    | tf                      | 1100        | 0                |
 | **Total** |                         | **10500**       | **3564**             |
 
-
-   
-
-
-
-
-
-<br>
-
-**References:**<br>
-1. [Data Exploration with Weight of Evidence and Information Value ](http://multithreaded.stitchfix.com/blog/2015/08/13/weight-of-evidence/)<br>
-2. [WOE and IV](http://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html)<br>
-3. [Introduction to WOE and IV](http://documentation.statsoft.com/STATISTICAHelp.aspx?path=WeightofEvidence/WeightofEvidenceWoEIntroductoryOverview)<br>
+That's it for now, see you in the next post!
 
