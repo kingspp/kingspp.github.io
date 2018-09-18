@@ -16,10 +16,10 @@ Since tensorflow was made opensource, the framework got lot of attention from th
 and ease of training a neural network. Contrib package provides rapid prototyping facilities for 
 contributors.
 
-**Why is it deprecated**<br>
-Since its inception, contrib package has outgrown its size and application usecases and hence from 2.0 contrib package will cease to exist.
+**Why is it deprecated?**<br>
+Since its inception, contrib package has outgrown its size and application use cases and hence from 2.0 contrib package will cease to exist.
 Instead of contrib package, a single package will be split into easily maintainable open source projects. Some of the most used
-api's will be optimized and later integrated with tensorflow.
+api's will be optimized and later integrated with tensorflow. 
 
 **Is there any way to analyze / measure the after effects?**<br>
 It got me thinking, since I was using few api's from contrib package, what might be the global trend of this package? 
