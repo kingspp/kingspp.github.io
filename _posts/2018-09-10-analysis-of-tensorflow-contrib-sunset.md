@@ -93,7 +93,7 @@ then provides content of the file encoded in *base64* format.
 ```python
 
 # Github Code Search API - We will look for tf.contrib alternatively also look for tensorflow.contrib (for import usage)
-API_BASE = 'https://api.github.com/search/code?q=tf.contrib+repo:{}&per_page=100&access_token='
+API_BASE = 'https://api.github.com/search/code?q=tf.contrib+language:python+repo:{}&per_page=100&access_token='
 
 total_repos = repos.count()
 queries = db.queries
@@ -157,24 +157,7 @@ import base64
 @dataclass
 class Record(Munch):
     repo_name: str
-    line_no: int
-    usage_type: str
-    api_search_score: float
-    topic_search_score: float
-    api_query: str
-    topic_query: str
-    forks: int
-    watchers: int
-    stars: int
-    created_on: str
-    updated_on: str
-    pushed_on: str
-    file_url: str
-    path: str
-    size: int
-    owner: str
-    language: str
-    open_issues: int
+    ...
     api: str
 
 
@@ -182,38 +165,25 @@ class UsageType(enum.Enum):
     Normal = enum.auto()
     Commented = enum.auto()
 
-
 normal_usage = re.compile('tf\.contrib\.[^\(|^\s]*')
 commented_usage = re.compile('#.*(tf\.contrib[^\(|^\s]*)')
 
 API_USAGE = {}
 
-def usage(api, line_no, repo_name, usage_type):
+def usage(api, line_no, repo_name, usage_type, query_details):
     repo_details = repos.find_one({"full_name": repo_name})
-    query_details = queries.find_one({"repository.full_name": repo_name})
-    r = Record(repo_name=repo_name, line_no=line_no, usage_type=usage_type.name,
-               topic_search_score=repo_details['score'], api_search_score=query_details['score'],
-               file_url=query_details['html_url'], api_query='tf.contrib', topic_query=repo_details['topic'],
-               forks=repo_details['forks'], watchers=repo_details['watchers'], stars=repo_details['stargazers_count'],
-               size=repo_details['size'], created_on=repo_details['created_at'], pushed_on=repo_details['pushed_at'],
-               updated_on=repo_details['updated_at'], owner=repo_name.split('/')[0], language=repo_details['language'],
-               open_issues=repo_details['open_issues'], path=query_details['path'], api=api)
+    r = Record(...)
     if api in API_USAGE:
         API_USAGE[api].append(r)
     else:
         API_USAGE[api] = [r]
 
-
 for q_no, query in enumerate(queries.find()):
     lines = base64.b64decode(query['content']['content']).decode('utf-8').split('\n')
-    for l_no, line in enumerate(lines):
-        c_usage = commented_usage.findall(line)
-        if c_usage:
-            usage(c_usage[0], l_no, query['repository']['full_name'], UsageType.Commented)
-            continue
+    for l_no, line in enumerate(lines):        
         n_usage = normal_usage.findall(line)
-        if n_usage:
-            usage(n_usage[0], l_no, query['repository']['full_name'], UsageType.Normal)
+        if n_usage:            
+            usage(n_usage[0], l_no+1, query['repository']['full_name'], UsageType.Normal, query)
 ```
 
 At the end of this exercise, we have a dictionary with *API Name* as *key* and *statistics* as *values*. Using this data, 
@@ -223,24 +193,19 @@ tabular visualization.
 ```python
 @dataclass
 class UsageStats(Munch):
-    id:int
-    api: str
-    total_usage: int
-    total_stars: int
-    total_fork: int
-    total_issues: int
-
+    id: int
+    ...
+    updated_on: str
 stats = []
 
 for k, records in API_USAGE.items():
     _stars, _watchers, _forks, _issues, = 0, 0, 0, 0
+    _created_on, _last_updated_on = [], []
     for record in records:
         _stars += record['stars']
-        _forks += record['forks']
-        _issues += record['open_issues']
-    stats.append(
-        UsageStats(id=k,api=k, total_usage=len(records), total_stars=_stars, total_fork=_forks,
-                   total_issues=_issues))
+        ...
+        _last_updated_on.append(record['updated_on'])
+    stats.append(UsageStats(...))
 ```
 
 Some interesting results,
@@ -264,6 +229,7 @@ Some interesting results,
 
 1. Github search api provides 1000 best matched results along with the score.
 2. There are few errors in the result provided by  Github code search api, such as duplicate keys, error in count of watchers and few others
+3. Even though we had a filter for language as *python*, in the end we had results from *rst* and *md* file types.
 
 [Sample Repo Query](https://jsoneditoronline.org/?id=524ccda2e2ce4991bf9f256b2c326092) | [Sample Code Query](https://jsoneditoronline.org/?id=1ae6018d072540d9ba451d114055744f)
  
