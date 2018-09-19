@@ -83,6 +83,8 @@ for topic in topics:
         rd = query(API_BASE.format(topic, page_counter)).json()
 ```
 
+[Repo Dataset](https://github.com/kingspp/tf-contrib-analyzer/raw/master/data/repos.zip)
+
 Now we have a list  ( `db.repos.count()` ) of repositories related to / using tensorflow framework. Our
 next objective is to find api's related to contrib package in these repositories. To do that, we will use Github's *code search* api.
 Github *code search* api returns file url instead of content. To get the content of the file, we just have to query the given git url which
@@ -108,6 +110,9 @@ for f_no, repo in enumerate(db.repos.find()):
     queries.insert_many(req['items'])
     print('Saving: {}. {} / {} '.format(repo['full_name'], f_no, total_repos))
 ```  
+
+[Code Queries Dataset - tf.contrib](https://github.com/kingspp/tf-contrib-analyzer/raw/master/data/query/tf.contrib.zip)<br>
+[Code Queries Dataset - tensorflow.contrib](https://github.com/kingspp/tf-contrib-analyzer/raw/master/data/query/tensorflow.contrib.zip)<br>
 
 We have two collections,<br>
 **Repos** - Collection of repos and their statistics <br>
@@ -253,6 +258,15 @@ Some interesting results,
 | 9     | ai                      | 1100        | 0                |
 | 10    | tf                      | 1100        | 0                |
 | **Total** |                         | **10500**       | **3564**             |
+
+
+#### Caveats:
+
+1. Github search api provides 1000 best matched results along with the score.
+2. There are few errors in the result provided by  Github code search api, such as duplicate keys, error in count of watchers and few others
+
+[Sample Repo Query](https://jsoneditoronline.org/?id=524ccda2e2ce4991bf9f256b2c326092) | [Sample Code Query](https://jsoneditoronline.org/?id=1ae6018d072540d9ba451d114055744f)
+ 
 
 That's it for now, see you in the next post!
 
