@@ -1,42 +1,42 @@
 ---
 layout: post
 title: "Analysis of Tensorflow Contrib Sunset"
-description: "Recently tensorflow announced that for 2.0 release, contrib package will be deprecated. The post is aimed at analyzing the effects."
+description: "Recently tensorflow announced that for 2.0 release, contrib package will cease to exist. The post is aimed at analyzing the after effects."
 author: kingspp
 category: Algo
 tags: tensorflow tensorflow-contrib deeplearning machine-learning
 finished: false
 ---
 **What is Tensorflow?**<br>
-Tensorflow is the first ever open source project to have > 100,000 stars for a machine learning framework. It is 
+Tensorflow is the first ever open source project to have > 100,000 stars (for a machine learning framework ;). It is a
 full stack framework which includes support data preprocessing, predictive modelling and serving.
 
 **What is tensorflow.contrib package?**<br>
-Since tensorflow was made opensource, the framework got lot of attention from the community for its simplicity 
+From the time when tensorflow was made opensource, the framework got a lot of attention from the community for its simplicity 
 and ease of training a neural network. Contrib package provides rapid prototyping facilities for 
 contributors.
 
 **Why is it deprecated?**<br>
-Since its inception, contrib package has outgrown its size and application use cases and hence from 2.0 contrib package will cease to exist.
-Instead of contrib package, a single package will be split into easily maintainable open source projects. Some of the most used
+Since its inception, contrib package has outgrown its size and use cases, hence from 2.0, contrib package will cease to exist.
+Instead, the package will be split into easily maintainable open source projects. Some of the most used
 api's will be optimized and later integrated with tensorflow. 
 
 **Is there any way to analyze / measure the after effects?**<br>
-It got me thinking, since I was using few api's from contrib package, what might be the global trend of this package? 
+It got me thinking, since I was using few api's from contrib package, what might be the global trend? 
 The package is not new and is the most contributed amongst others. My intuition for global trend is `tf.contrib.layers.xavier_initializer` api would top, 
 just because I am a big fan of it :D.
 
 The obvious place to look for api usage is in *open source projects* which leads to **Github**. Github provides various types of search api's
-which aids us in finding usage. But the implementation is not straightforward as they have disabled code search on their entire
-collection of open source projects. Instead they allow us to perform code search on a single repository instead.
+which aids us in finding the usage statistics. But the implementation is not straightforward as they have disabled code search on their entire
+collection of open source projects. Instead they allow us to perform code search on a single repository.
 
-Before heading to github api's I would recommend you to get [OAuth Client Key](https://developer.github.com/v3/#authentication), as the authentication provides,
+Before heading to github api's I would recommend to setup [OAuth Client Key](https://developer.github.com/v3/#authentication), as the authentication provides,
 extra 20 requests / min. By default [rate is limited](https://developer.github.com/v3/search/#rate-limit) to just 10 requests / min. I will be using
-[ratelimit](https://github.com/tomasbasham/ratelimit) package to reduce headaches related to rate-limiting!
+[ratelimit](https://github.com/tomasbasham/ratelimit) package to reduce headaches related to rate-limiting! Thanks Tomas!
 
 So the first step is to get a list of all the repositories which uses tensorflow. The easiest way to search a repository 
 having tensorflow code is by using filters. <br>
-a. Create a list of topics which projects might use tensorflow framework<br>
+a. Create a list of topics, where projects might use tensorflow framework<br>
 b. Primary language of the repository is Python.<br>
 c. Repo has > 10 stars. 
 
@@ -85,7 +85,7 @@ for topic in topics:
 
 [Repo Dataset](https://github.com/kingspp/tf-contrib-analyzer/raw/master/data/repos.zip)
 
-Now we have a list  ( `db.repos.count()` ) of repositories related to / using tensorflow framework. Our
+Now that we have a list  ( `db.repos.count()` ) of repositories related to / using tensorflow framework, our
 next objective is to find api's related to contrib package in these repositories. To do that, we will use Github's *code search* api.
 Github *code search* api returns file url instead of content. To get the content of the file, we just have to query the given git url which
 then provides content of the file encoded in *base64* format.
@@ -119,9 +119,9 @@ We have two collections,<br>
 **Queries** - Collection of code search queries and their statistics<br>
 
 Now comes the fun part *REGEX*!. We need to use Regex to find the api usage in the content query. Its simple, head over to 
-[regex101](https://regex101.com/), plug in sample content and come up with expressions. 
+[regex101](https://regex101.com/), plug in the sample content and come up with expressions. 
 
-Test Input
+Test Input:
 ```text
 import tensorflow as tf\n\
 # xyz = tf.contrib.layers.xavier()\n\
@@ -130,7 +130,7 @@ import tensorflow.contrib\
 from tensorflow import contrib\n\
 ```
 
-Regular Expressions: (Below can be improved and in this exercise I will use normal_usage and commented usage. However there is scope for inspecting import level usage)
+Regular Expressions: (Below can be improved and in this exercise I will use normal_usage and commented_usage. However there is a scope for inspecting import level usage)
 ```python
 import re
 
@@ -142,9 +142,9 @@ from_import_usage = re.compile('from\ tensorflow import contrib.*')
 commented_from_import_usage = re.compile('#.*(from\ tensorflow import contrib.*)')
 ```
 
-The final step in data prep is to use the regex and find the api usage and statistics by merging repos collection and query collections using pre defined conditions. Again for simplicity 
-sake I will be using [python dataclasses](https://docs.python.org/3/library/dataclasses.html) (also I am lazy to write \_\_init__) in 3.7. For 3.3+ users check out Erick's [dataclasses repo](https://github.com/ericvsmith/dataclasses). 
-Also I like **Munch**   
+The final step in data prep is to use the regex to find the api usage and statistics by merging repos and query collections using pre defined conditions. Again for simplicity 
+sake I will be using [python dataclasses](https://docs.python.org/3/library/dataclasses.html) (I am lazy to write \_\_init__ :P) in 3.7. For 3.3+ users check out Erick's [dataclasses repo](https://github.com/ericvsmith/dataclasses). 
+Also I like **Munch** !   
 
 ```python
 from munch import Munch
@@ -207,6 +207,8 @@ for k, records in API_USAGE.items():
         _last_updated_on.append(record['updated_on'])
     stats.append(UsageStats(...))
 ```
+
+This leaves us with two files, one which has the [aggregated statistics](https://github.com/kingspp/tf-contrib-analyzer/blob/master/static/data/stats.json) and the other which provides [detailed information](https://github.com/kingspp/tf-contrib-analyzer/blob/master/static/data/usage.json). 
 
 Some interesting results,
 
