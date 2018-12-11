@@ -24,6 +24,9 @@ links:
   - name:         GitHub
     url:          http://github.com/kingspp
     external:     true
+  - name:         Demos
+    url:          /demos
+    external:     false
 
 # Search settings
 tipue_search:
