@@ -27,6 +27,9 @@ links:
   - name:         Demos
     url:          /demos
     external:     false
+  - name:         CV
+    url:          /cv
+    external:     false
 
 # Search settings
 tipue_search:
