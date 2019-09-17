@@ -28,8 +28,8 @@ links:
     url:          /demos
     external:     false
   - name:         CV
-    url:          https://docs.google.com/viewer?url=https://raw.githubusercontent.com/kingspp/kingspp.github.io/master/assets/CV.pdf
-    external:     true
+    url:          /cv
+    external:     false
 
 # Search settings
 tipue_search:
