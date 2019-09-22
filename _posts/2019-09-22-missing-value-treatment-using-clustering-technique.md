@@ -9,9 +9,11 @@ In a practical scenario, we often come across missing values in a dataset. The v
 #### Can clustering be used for missing value treatment?
 Clustering is grouping of similar objects. As the objective of clustering is based on similarity, we can use the technique to find the mean of the closest cluster and replace the missing value. 
 Methods of clustering techniques for missing value treatment</br>
-<b>1. Column Ignore Clustering</b>:</br>
+
+**1. Column Ignore Clustering**:
     Given a missing value, its column is said to ignored for the clustering mechanism. Once the clusters are formed, the mean of the missing value's column is calculated</br>
-<b>2. Row Ignore Clustering</b>:</br>
+    
+**2. Row Ignore Clustering**:
     Given a missing value, the row is dropped, and KMeans is run on all the columns as input. Later the dropped sample is compared against the cluster centroid and the mean is computed based on the cluster.
 
 ## Dataset and its Features
