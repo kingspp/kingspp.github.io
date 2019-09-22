@@ -362,6 +362,7 @@ print(f"Average Std: {sum(avg_std)/len(avg_std)}")
 
 
 ### Results
+
 | Type                 | Error Norm(Predictions-Actuals) | Cluster Performance (Avg Std) | Time Required in ms |
 |----------------------|---------------------------------|-------------------------------|---------------------|
 | Benchmark Index      | -                               | 0.21593993577857082           | 39.4                |
