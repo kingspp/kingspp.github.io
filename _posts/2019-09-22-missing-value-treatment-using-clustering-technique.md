@@ -127,7 +127,7 @@ print(f"Actual Values of the mask: {ACTUAL_VALUES}")
     Actual Values of the mask: [1.2 1.7 1.5 4.  1.6]
 
 
-## Single Column Missing Value Treament
+## Single Column Missing Value Treatment
 In this case, we are considering the scenario that there are missing values in a single column.
 
 ### Column Based Ignore
@@ -254,7 +254,7 @@ print(f"Average Std: {sum(avg_std)/len(avg_std)\n")
     Wall time: 44.2 ms
 
 
-## Multi Column Missing Value Treament
+## Multi Column Missing Value Treatment
 In this case, we are considering the scenario that there are missing values across multiple columns.
 
 ## Row Based Ignore
@@ -325,7 +325,7 @@ print(f"Average Std: {sum(avg_std)/len(avg_std)}\n")
     Wall time: 55.4 ms
 
 
-### Column Based Igore
+### Column Based Ignore
 Steps are similar to Single Column, Column Based Ignore. (Consider `PL` and `PW` columns have missing values)
 
 ```python
