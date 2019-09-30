@@ -4,104 +4,114 @@
       "date": "2011 - 2015",
       "header": "BE Degree in E&CE",
       "body": "Completed my Bachelor of Engineering degree with <i>distinction</i> in Electronics and Communication Engineering at Maharaja Institute of Technology",
-      "place": "Maharaja Institute of Technology, Mysore"
+      "place": "Maharaja Institute of Technology, Mysore",
+      "timestamp": 1312209991
     },
     {
       "date": "28 Sep, 2013",
       "header": "Microsoft Yappon Event - 2nd Place",
       "body": "Microsoft Yappon - An event conducted by Microsoft to provide an introduction to cutting-edge software and tools for budding developers. Developed <a href='https://github.com/kingspp/Solutions-to-BE-MetroApp'>BE Solution App</a> using .NET 4.5, XAML and won 2nd Place in the competition",
-      "place": "Maharaja Institute of Technology, Mysore"
+      "place": "Maharaja Institute of Technology, Mysore",
+      "timestamp": 1380379630
     },
     {
       "date": "4 Jun, 2014",
       "header": "RPi-AUI",
       "body": "Raspberry Pi - Arch Ultimate Installer. Had found recent love for Arch Linux, DIY Linux distro - a perfect non-bloated distro for Raspberry Pi. Worked on Kernel Configurations, Overclocking and other Utils. <a href='https://github.com/kingspp/RPi-AUI'>RPi-AUI Repository</a>",
-      "place": "Maharaja Institute of Technology, Mysore"
+      "place": "Maharaja Institute of Technology, Mysore",
+      "timestamp": 1401893252
     },
     {
       "date": "2 Feb, 2014",
       "header": "Muay-Thai",
       "body": "Trained in professional sport of kick boxing for nearly 4 years. Completed 1st level certification and received <i>White Monkoon</i>",
-      "place": "Academy of Martial Science, Mysore"
-    },
-    {
-      "date": "4 Jun, 2014",
-      "header": "RPi-AUI",
-      "body": "Raspberry Pi - Arch Ultimate Installer. Had found recent love for Arch Linux, DYI Linux distro - a perfect non-bloated distro for Raspberry Pi. Worked on Kernel Configurations, Overclocking and other Utils. <a href='https://github.com/kingspp/RPi-AUI'>RPi-AUI Repository</a>",
-      "place": "Maharaja Institute of Technology, Mysore"
+      "place": "Academy of Martial Science, Mysore",
+      "timestamp": 1391352477
     },
     {
       "date": "26 Jul, 2014",
       "header": "PyDSP",
       "body": "I had taken a course in Digital Signal Processing which consists of a wide variety of algorithms for signal processing application. I was also new to Python and Django Web framework, hence I leveraged my python skills and developed a website which is aimed to solve challenging problems engineering students face in the field of Digital Signal Processing<br/> <li><a href='http://kingspp.pythonanywhere.com/'>PyDSP Website</a></li>",
-      "place": "Maharaja Institute of Technology, Mysore"
+      "place": "Maharaja Institute of Technology, Mysore",
+      "timestamp": 1406386130
     },
 
     {
       "date": "22 Mar, 2015",
       "header": "Mahadasara",
       "body": "Mahadasara, a one of a kind cultural and sports feast - Our college festival. <br/><li> Organized Marathon Event</li><li>Designed and Developed Website and Android Application with Integrated Payment Gateway</li>",
-      "place": "Maharaja Institute of Technology, Mysore"
+      "place": "Maharaja Institute of Technology, Mysore",
+      "timestamp": 1427035754
     },
     {
       "date": "20 Jun, 2015",
       "header": "PiScope - My dream",
       "body": "PiScope is an affordable oscilloscope aimed at a market comprising of Hobbyists, Teachers and Students. A prototype was built using AD9850 for Frequency Synthesizing and Raspberry Pi for Signal Processing. <br/><li><a href='https://github.com/kingspp/PiScope'>PiScope Core</a> - Consists of hardware interfaces</li><li><a href='https://github.com/kingspp/PiScope-Flask'>PiScope-Flask</a> - Backend server architecture designed to provide REST Api for IOT access</li><li><a href='https://github.com/kingspp/RPi-PiScope'>PiScope-RPi</a> - Front-end Oscilloscope software built using cutting-edge JAVA FX Technology, deployed on Raspberry Pi with limited hardware resouces</li><li><a href='https://github.com/kingspp/PiScope-Android'>PiScope Android</a> - Android application interface which provides control for frequency synthesizer components</li>",
-      "place": "Maharaja Institute of Technology, Mysore"
+      "place": "Maharaja Institute of Technology, Mysore",
+      "timestamp": 1434811783
     },
     {
-      "date": "2015 - present",
+      "date": "2015 - 2019",
       "header": "DL Engineer @ Razorthink Technologies",
       "body": "Started as a trainee software engineer in 2015, later that year, I switched over from web application to deeplearning and artificial intelligence domain. At present I work in r&d dept",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1437523200
     },
     {
       "date": "22 Jul, 2015",
       "header": "Sentiment Analysis",
       "body": "The Algorithm is based on Bayes Probabilistic model. Sentiment words are detected by using pos-comments and neg-comments text files. The probability of each word is based on the appearance of the word in a sentence which results in the sentence being either positive or negative. The pos/neg files are constructed based on IMDB's Sentimental reviews and twitter's sentiments",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1440168698
     },
     {
       "date": "25 Oct, 2015",
       "header": "Sense Algorithm (Summary)",
       "body": "The essence of the sentence lies in the context. Usually the context is described by adjectives or adverbs. The usage and frequency of these words predict the importance of a sentence. Hence TF-IDF algorithm is used to calculate the frequency of these words, later Probability Theory is applied to find the probability of the sentence being important",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1445784698
     },
     {
       "date": "18 Oct, 2015",
       "header": "Natural Language Processing(NLP)",
       "body": "Natural language processing (NLP) is a field of computer science, artificial intelligence, and computational linguistics concerned with the interactions between computers and human (natural) languages. As such, NLP is related to the area of human–computer interaction. I worked on parsing Natural language commands to Machine level commands. Named Entities, one of the most important features in email - Information Extraction is a tough one. I wrote wrappers on top of Stanford NER which increased its accuracy by 25%",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1445179898
     },
     {
       "date": "02 December, 2015",
       "header": "IManagement",
       "body": "Our contribution towards solving problems in Razorthink Company. IManagement is a smart webapp aimed to manage Razorthink's inventory. Shreesha and I are proud to say that we utilized 4 Saturdays to build the application. Shreesha worked on the backend while I worked on the frontend. The application uses latest technologies like sprint-boot, hibernate, angular and materialize framework",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1449067898
     },
     {
       "date": "22 December, 2015",
       "header": "Word2Vec & Neo4J",
       "body": "The hottest topic in ML and AI. Word2vec is a group of related models that are used to produce so-called word embeddings. These models are shallow, two-layer neural networks that are trained to reconstruct linguistic contexts of words: the network is shown a word, and must guess which words occurred in adjacent positions in an input text. An opensource graph based database. The idea was to capture the various relations between a person and entities such as another person, organization or location. The algorithms will be used for Information Extraction from electronic mails",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1450795898
     },
     {
       "date": "1 Jan, 2016",
       "header": "BigBrain",
       "body": "Robust product aimed at providing customized Expert AI Solution. Our customers rage from banking to retail business. Initially my role was to incorporate Scala and Python Support for the platform",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1451659898
     },
     {
       "date": "22 Feb, 2016",
       "header": "Feature Discovery and Pattern Clustering",
       "body": "An amazing research and development in the field of AI led by Nandu and Shams. We wrote algorithms based on ML top tools such as Word2Vec, Cosine Similarity, Eucledian distance, NER, POS Prediction and others",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1456152698
     },
     {
       "date": "11 Nov, 2016",
       "header": "Young Dynamite!!",
       "body": "On this day, I received Razorthink's prestigious award <i><b> Young Dynamite</b></i> - Top performer in a tech-role.",
-      "place": "Razorthink Technologies, Bangalore"
+      "place": "Razorthink Technologies, Bangalore",
+      "timestamp": 1473605498
     }
   ]
 }

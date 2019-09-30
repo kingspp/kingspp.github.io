@@ -64,6 +64,7 @@ jQuery(document).ready(function ($) {
     $.getJSON("/assets/timeline.json", function (json) {
         $("#cd-timeline").empty();
         data = json['timeline'];
+        data.sort(function (a, b) {return b.timestamp - a.timestamp;});
         $.each(data, function (k, v) {
             // var date = moment(v.date);
             html += '<div class="cd-timeline-block">' +
