@@ -1,24 +1,30 @@
 ---
 layout: main
 ---
+<link rel="stylesheet" href="{{ "/assets/css/particle.css" | prepend: site.baseurl }}">
+<div class='particle-network-animation' style="z-index: -1"></div>
 
-<div class="home">
+<div class="home" style="background: #FFF">
     <div class="logo-header">
         <img src='/assets/logo.png'>
         <h1 class="post-title">{{ site.title }}</h1>
         <p><b>Hi i'm Prathyush!</b> and here is the place where my thoughts come to life.</p>
+        <div class="quote-box">
+            <div id="quote"></div>
+            <p class="author"></p>
+        </div>
     </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-    <li>
-        <div>
-        <a class="post-link" href="{{ site.url }}{{ post.url}}">{{ post.title }}</a>
-            <span class="post-date">{{ post.date | date_to_long_string }}</span>
-        </div>
-    </li>
-    {% endfor %}
-  </ul>
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <li>
+            <div>
+                <a class="post-link" href="{{ site.url }}{{ post.url}}">{{ post.title }}</a>
+                <span class="post-date">{{ post.date | date_to_long_string }}</span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
     <div class="footer center">
         Built with Jekyll using
@@ -26,3 +32,34 @@ layout: main
         theme
     </div>
 </div>
+
+<script src="{{"/assets/js/particle.js"}}"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?", function (data) {
+            quoteText = data.quoteText;
+            if (data.quoteAuthor) {
+                quoteAuthor = data.quoteAuthor;
+            } else {
+                quoteAuthor = "Anonymous"
+            }
+            $('#quote').animate({
+                opacity: 0
+            }, 0, function () {
+                $('#quote').html(quoteText);
+                $(this).animate({
+                    opacity: 1
+                }, 0);
+            });
+            $('.author').animate({
+                opacity: 0
+            }, 0, function () {
+                $('.author').html(" - " + quoteAuthor);
+                $(this).animate({
+                    opacity: 1
+                }, 0);
+            });
+        });
+    });
+    </script>
