@@ -29,7 +29,7 @@ links:
     external:     false
   - name:         CV
     url:          /cv
-    external:     false
+    external:     true
 
 # Search settings
 tipue_search:
