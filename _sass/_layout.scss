@@ -317,5 +317,25 @@ input#tipue_search_input{
    }
  }
 
+@media screen and  (max-width:992px) {
+
+    .fa-lg{
+        color:#145693;
+    }
+
+  .site-nav a{
+    color: #145693;
+  }
+
+  .site-nav a:active{
+    color: #145693!important;
+  }
+
+  .site-nav{
+    z-index: 1;
+  }
+
+}
+
 
 
