@@ -24,8 +24,8 @@ links:
   - name:         GitHub
     url:          http://github.com/kingspp
     external:     true
-  - name:         Demos
-    url:          /demos
+  - name:         Showcase
+    url:          /showcase
     external:     false
   - name:         CV
     url:          /cv
