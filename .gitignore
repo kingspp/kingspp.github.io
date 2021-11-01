@@ -90,3 +90,9 @@ ENV/
 .idea/*
 *.scssc
 _site/*
+
+.history/*
+
+.jekyll-cache/*
+
+*.lock

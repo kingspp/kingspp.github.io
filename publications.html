@@ -1,0 +1,76 @@
+---
+layout: page
+title: Publications
+subtitle: Do something you like.
+permalink: /publications/
+---
+
+<div class="home">
+    <div>
+        <h2 style="text-align:left;color:#115d62">Learning Saliency Maps to Explain Deep TimeSeries Classifiers</h2>
+        <div style="margin-top:-10px">
+            <p><i><u><span>P Parvatharaju</span></u>, R Doddaiah, T. Hartvigsen, E. Rundenstiner</i>
+            </p>
+        </div>
+        <div style="margin-top:-10px; color:black">
+            <p>CIKM ’21 (21.7% acceptance rate), QLD, Australia</p>
+        </div>
+        <div style="text-align:center; font-size: 16px">
+            <p>
+            <a href="https://github.com/kingspp/timeseries-explain/blob/main/docs/Learning%20Saliency%20Maps%20to%20Explain%20Deep%20Time%20Series%20Classifiers.pdf"
+                target="_blank">Paper</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.youtube.com/watch?v=kAfUe5e3_Nk" target="_blank">Video</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://github.com/kingspp/timeseries-explain/blob/main/docs/CIKM%202021%20Slides.pdf"
+                target="_blank">Slides</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://github.com/kingspp/timeseries-explain/blob/main/docs/CIKM%202021%20Poster.pdf"
+                target="_blank">Poster</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://github.com/kingspp/timeseries-explain" target="_blank">Code</a></p>
+        </div>
+        <p>
+        Explainable classification is essential to high-impact settings where practitioners require evidence to support
+        their decisions. However, state-of-the-art deep learning models lack transparency in how they make their
+        predictions. One increasingly popular solution is attribution-based explainability, which finds the impact of
+        in- put features on the model’s predictions. While this is popular for computer vision, little has been done to
+        explain deep time series classifiers. In this work, we study this problem and propose PERT, a novel
+        perturbation-based explainability method designed to explain deep classifiers’ decisions on time series. PERT
+        extends beyond re- cent perturbation methods to generate a saliency map that assigns importance values to the
+        timesteps of the instance-of-interest.
+        First, PERT uses a novel Prioritized Replacement Selector to learn which alternative time series from a larger
+        dataset are most useful to perform this perturbation. Second, PERT mixes the instance with the replacements
+        using a Guided Perturbation Strategy, which learns to what degree each timestep can be perturbed without
+        altering the classifier’s final prediction. These two steps jointly learn to identify the fewest and most
+        impactful timesteps that explain the classifier’s prediction. We evaluate PERT using three metrics on nine
+        popular datasets with two black-box models. We find that PERT consistently outperforms all five state-of-the-art
+        methods. Using a case study, we also demonstrate that PERT succeeds in finding the relevant regions of the input
+        time series.
+        </p>
+    </div>
+    <div>
+        <h2 style="text-align:left;color:#115d62">Differential Learning using Neural Network Pruning</h2>
+        <div style="margin-top:-10px">
+            <p><i><u><span>P Parvatharaju</span></u>, S. Murthy</i>
+            </p>
+        </div>
+        <div style="margin-top:-10px; color:black">
+            <p>CORR'21 * (in submission)</p>
+        </div>
+        <div style="text-align:center; font-size: 16px">
+            <p>
+                <a href="https://github.com/kingspp/differentiable_learning/blob/master/paper/Differentiable%20Learning%20by%20means%20of%20Neural%20Network%20Pruning.pdf"
+                    target="_blank">Paper</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="https://docs.google.com/presentation/d/1cOLNJKN-l7zeuda_5QZI3do6ew04c6XVUIPZeCz2qNQ/edit?usp=sharing"
+                    target="_blank">Slides</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="https://github.com/kingspp/differentiable_learning" target="_blank">Code</a></p>
+        </div>
+        <p>
+        The idea of linear flow i.e, each node in a layer is connected to a certain weight Wij to every other node in
+        the following layer, for the deep neural network is limiting in the sense of the way we, humans think. It is a
+        constraint for DNN as they process data and emulate relationships in higher dimensions. By replacing the linear
+        flow with a gradient-based decision process combined with skip connections give the ability for the network to
+        develop much deeper constructs from minimal data. We propose a novel idea of extending the capabilities of
+        previously used short-circuits as differentiable functions, essentially solving “What to feed?”. To tackle the
+        problem, “When to stop?” we propose an algorithm for early stopping criterion based on Information Transfer
+        derived from differentiable short-circuits
+        </p>
+    </div>
+</div>

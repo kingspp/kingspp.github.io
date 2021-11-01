@@ -24,6 +24,9 @@ links:
   - name:         GitHub
     url:          http://github.com/kingspp
     external:     true
+  - name:         Publications
+    url:          /publications
+    external:     false
   - name:         Seminars
     url:          /seminars
     external:     false
