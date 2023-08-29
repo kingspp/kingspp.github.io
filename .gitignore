@@ -96,3 +96,6 @@ _site/*
 .jekyll-cache/*
 
 *.lock
+
+*.vscode
+
